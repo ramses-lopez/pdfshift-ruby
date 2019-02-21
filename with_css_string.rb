@@ -4,7 +4,7 @@ require 'json' # for hash to_json conversion
 
 uri = URI("https://api.pdfshift.io/v2/convert/")
 data = {"source" => "https://www.example.com",
-  "css" => "a {text-decoration: underline; color: blue}",
+  "css" => "body { background-color: red }",
   "sandbox" => true}
 
 Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
