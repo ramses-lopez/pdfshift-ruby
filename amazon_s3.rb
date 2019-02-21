@@ -23,5 +23,6 @@ Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
     # "url":"<amazon_s3_url>/result.pdf"}
   else
     # Handle other codes here
+    puts "#{response.code} #{response.body}"
   end
 end

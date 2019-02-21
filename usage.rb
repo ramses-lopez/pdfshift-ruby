@@ -14,4 +14,5 @@ if response.code == '200'
   File.binwrite("result.pdf", response.body)
 else
   # Handle other codes here
+  puts "#{response.code} #{response.body}"
 end

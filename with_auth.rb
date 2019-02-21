@@ -2,9 +2,13 @@ require 'uri'
 require 'net/https'
 require 'json' # for hash to_json conversion
 
-file = File.read("invoice.html")
 uri = URI("https://api.pdfshift.io/v2/convert/")
-data = {"source" => file, "sandbox" => true}
+data = {"source" => "https://httpbin.org/basic-auth/user/passwd",
+  "auth" => {
+    "username" => "user",
+    "password" => "passwd"
+  },
+  "sandbox" => true}
 
 Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
   request = Net::HTTP::Post.new(uri.request_uri)
