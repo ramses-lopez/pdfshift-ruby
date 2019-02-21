@@ -3,8 +3,8 @@ require 'net/https'
 require 'json' # for hash to_json conversion
 
 uri = URI("https://api.pdfshift.io/v2/convert/")
-data = {"source" => "https://www.example.com",
-  "css" => "https://www.example.com/public/css/print.css",
+data = {"source" => "https://www.w3.org/",
+  "css" => "https://www.w3.org/2008/site/css/print",
   "sandbox" => true}
 
 Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
