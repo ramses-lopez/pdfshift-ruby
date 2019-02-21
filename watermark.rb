@@ -5,12 +5,12 @@ require 'json' # for hash to_json conversion
 uri = URI("https://api.pdfshift.io/v2/convert/")
 data = {"source" => "https://example.com",
   "watermark" => {
-    "image" => "https://robohash.org/pdfshift",
+    "image" => "https://pdfshift-dev.netlify.com/images/logo/logo-violet.png",
     "offset_x" => 50,
     "offset_y" => "100px",
     "rotate" => 45
   },
-  "sandbox" => true}
+  "sandbox" => true }
 
 Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
   request = Net::HTTP::Post.new(uri.request_uri)
